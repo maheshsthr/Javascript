@@ -2,7 +2,7 @@ const myDate = new Date("2025-05-13")
 
 console.log(myDate.toString())
 console.log(myDate.toLocaleString())
-console.log(myDate.toLocaleDateString())
+console.log(myDate.toLocaledsdsdDateString())
 console.log(myDate.toDateString())
 
 const nowDate = new Date();
