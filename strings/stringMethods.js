@@ -7,7 +7,7 @@ let isEnds = email.endsWith(".com")
 console.log(isEmail,isStartsWith,isEnds)
 
 //slice , replcae
-
+ 
 const phrase = "javaScript is Fun"
 console.log(phrase.slice(0,10))
 console.log(phrase.replace("Fun","amazing"))
