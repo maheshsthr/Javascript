@@ -13,3 +13,5 @@ async function callData(){
     }
 }
 callData()
+
+//we have to handle errors also becuase sometimes promise can be rejected 
