@@ -5,14 +5,14 @@ const getUser = async (username)=>{
         if(!response.ok){
             throw new Error("Failed to fetch User")
         }
-        return userProfile;
+        else{return userProfile;}
     }
     catch(error){
         console.log(error.message)
     }
 }
 
-const uname = "maheshsthr"
+const uname = "EnterGitHubUsername"
 const user=getUser(uname).then((user)=>{
     console.log(`Github Profile`)
     console.log(`Name : ${user.name}`)
