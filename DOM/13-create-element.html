@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="age" placeholder="enter your age">
+    <button>Add</button>
+    <ul>
+        <li>Name : Mahesh</li>
+        <li>Course : BCA</li>
+    </ul>
+</body>
+<script>
+    const input = document.querySelector("#age")
+    const ul = document.querySelector("ul")
+    const btn = document.querySelector("button")
+    btn.addEventListener("click",()=>{
+        let element = document.createElement("li")
+        element.textContent = input.value;
+        ul.append(element)
+    })
+</script>
+</html>
