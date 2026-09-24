@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .active {
+        color: green
+    }
+</style>
+<body>
+    <h1 class="active">Title</h1>
+</body>
+<script>
+    const element = document.querySelector("h1")
+    element.classList.remove("active")
+    element.textContent = "class removed"
+</script>
+</html>
