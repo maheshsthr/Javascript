@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="h1" placeholder="Enter Your Name">
+    <button>Print</button>
+    <h2></h2>
+</body>
+<script>
+    const button = document.querySelector("button")
+    const result = document.querySelector("h2")
+    button.addEventListener("click",()=>{
+        const name = document.querySelector("#h1").value;
+        result.textContent = name;
+    })
+</script>
+</html>
