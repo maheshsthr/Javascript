@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <button id="btn">Click</button>
+    </div>
+</body>
+<script>
+    const btn = document.querySelector("#btn")
+    const box = document.querySelector("#box")
+    btn.addEventListener("click",()=>{
+        console.log("Button Clicked")
+    })
+    box.addEventListener("click",()=>{
+        console.log("Box Clicked")
+    })
+</script>
+</html>
