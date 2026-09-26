@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --background: #f6f6f4;
+    --surface: #ffffff;
+    --border: #e3e3df;
+    --text: #1f1f1f;
+    --muted: #8a8a8a;
+    --primary: #1f1f1f;
+    --primary-hover: #333333;
+    --danger: #d64545;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 5px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    min-height: 100vh;
+
+    padding: 70px 20px;
+
+    background: var(--background);
+    color: var(--text);
+
+    font-family: "Inter", sans-serif;
+
+    text-align: center;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+h1 {
+    margin-bottom: 30px;
+
+    color: var(--text);
+
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+#task {
+    width: 500px;
+    height: 46px;
+
+    padding: 0 14px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#task::placeholder {
+    color: #999999;
+}
+
+#task:hover {
+    border-color: #c8c8c4;
+}
+
+#task:focus {
+    border-color: #a5a5a0;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 0, 0, 0.035);
+}
+
+/* =========================
+   ADD BUTTON
+========================= */
+
+#add {
+    height: 46px;
+
+    margin-left: 8px;
+    padding: 0 18px;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.15s ease;
+}
+
+#add:hover {
+    background: var(--primary-hover);
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+#add:active {
+    transform: translateY(1px);
+
+    box-shadow: none;
+}
+
+/* =========================
+   LIST WRAPPER
+========================= */
+
+.list {
+    width: 600px;
+
+    margin: 30px auto 0;
+}
+
+/* =========================
+   TASK LIST
+========================= */
+
+#task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 100%;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+/* =========================
+   TASK ITEM
+========================= */
+
+.task-li {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 54px;
+
+    padding: 12px 14px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    box-shadow: var(--shadow-sm);
+
+    color: var(--text);
+
+    font-size: 14px;
+    font-weight: 400;
+
+    text-align: left;
+    line-height: 1.5;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.task-li:hover {
+    border-color: #d2d2ce;
+
+    box-shadow: var(--shadow-md);
+
+    transform: translateY(-1px);
+}
+
+/* =========================
+   CHECKBOX
+========================= */
+
+.task-li input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+
+    margin-right: 12px;
+
+    flex-shrink: 0;
+
+    cursor: pointer;
+
+    accent-color: var(--primary);
+}
+
+/* =========================
+   COMPLETED TASK
+========================= */
+
+.task-li.completed {
+    color: var(--muted);
+
+    background: #fafaf8;
+}
+
+.task-li.completed input[type="checkbox"] {
+    accent-color: #777777;
+}
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.task-li button {
+    margin-left: auto;
+
+    flex-shrink: 0;
+
+    padding: 6px 9px;
+
+    background: transparent;
+    color: var(--muted);
+
+    border: 1px solid transparent;
+    border-radius: 6px;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.task-li button:hover {
+    color: var(--danger);
+
+    background: #fff2f2;
+
+    border-color: #f1d1d1;
+}
+
+.task-li button:active {
+    transform: scale(0.97);
+}
+
+/* =========================
+   FOCUS STATES
+========================= */
+
+#task:focus-visible,
+#add:focus-visible,
+.task-li button:focus-visible {
+    outline: 2px solid #999999;
+    outline-offset: 3px;
+}
+
+/* =========================
+   TEXT SELECTION
+========================= */
+
+::selection {
+    background: #1f1f1f;
+    color: #ffffff;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 50px 20px;
+    }
+
+    #task {
+        width: calc(100% - 105px);
+    }
+
+    .list {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 40px 15px;
+    }
+
+    h1 {
+        margin-bottom: 24px;
+
+        font-size: 27px;
+    }
+
+    #task {
+        width: 100%;
+        height: 44px;
+
+        margin-bottom: 9px;
+
+        font-size: 13px;
+    }
+
+    #add {
+        width: 100%;
+        height: 44px;
+
+        margin-left: 0;
+    }
+
+    .list {
+        margin-top: 24px;
+    }
+
+    .task-li {
+        min-height: 52px;
+
+        padding: 10px 12px;
+
+        font-size: 13px;
+    }
+
+    .task-li input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+
+        margin-right: 10px;
+    }
+
+    .task-li button {
+        padding: 6px 8px;
+
+        font-size: 10px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 340px) {
+
+    body {
+        padding: 30px 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #task {
+        height: 42px;
+    }
+
+    #add {
+        height: 42px;
+    }
+
+    .task-li {
+        padding: 9px 10px;
+
+        font-size: 12px;
+    }
+}
